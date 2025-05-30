@@ -36,7 +36,7 @@ https://mkizka.github.io/pdsadmin-web/
 
 作成したPDSの`PDS_HOSTNAME`と、自動生成された `PDS_ADMIN_PASSWORD`でログインして新しいアカウントを作成してください。
 
-招待コードを発行し、https://bsky.app でアカウントを作成することも出来ます。
+Webツールで招待コードを発行し、https://bsky.app でアカウントを作成することも出来ます。
 
 ### コマンドライン
 

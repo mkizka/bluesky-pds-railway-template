@@ -36,7 +36,7 @@ https://mkizka.github.io/pdsadmin-web/
 
 Log in with the `PDS_HOSTNAME` of your created PDS and the auto-generated `PDS_ADMIN_PASSWORD` to create a new account.
 
-You can also issue invitation codes and create accounts at https://bsky.app.
+You can also issue invitation codes using the web tool and create accounts at https://bsky.app.
 
 ### Command Line
 
