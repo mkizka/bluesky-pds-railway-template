@@ -1,4 +1,4 @@
-# Bluesky PDS (Personal Data Server)
+# bluesky-pds-railway-template
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/xBNJ1u?referralCode=mveF9L)
 
