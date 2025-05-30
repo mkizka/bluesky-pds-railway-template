@@ -1,5 +1,7 @@
 # bluesky-pds-railway-template
 
+[日本語版 / Japanese version](README_ja.md)
+
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/xBNJ1u?referralCode=mveF9L)
 
 This repository is for explaining how to use the [Bluesky PDS](https://railway.com/template/xBNJ1u?referralCode=mveF9L) template.
