@@ -2,7 +2,7 @@
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/xBNJ1u?referralCode=mveF9L)
 
-This repository is for explaining how to use this template.
+This repository is for explaining how to use the [Bluesky PDS](https://railway.com/template/xBNJ1u?referralCode=mveF9L) template.
 
 This is an unofficial template. The environment variable settings used here are based on the official installation script:
 

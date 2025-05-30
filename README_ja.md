@@ -2,7 +2,7 @@
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/xBNJ1u?referralCode=mveF9L)
 
-このリポジトリは、このテンプレートの使い方を説明するためのものです。
+このリポジトリは、[Bluesky PDS](https://railway.com/template/xBNJ1u?referralCode=mveF9L)テンプレートの使い方を説明するためのものです。
 
 これは非公式のテンプレートです。ここで使用されている環境変数の設定は、公式のインストールスクリプトに基づいています
 
