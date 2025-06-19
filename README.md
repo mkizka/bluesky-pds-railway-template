@@ -28,22 +28,22 @@ If you have any questions, please contact [@mkizka.dev](https://bsky.app/profile
 
 ## How to Create an Account
 
-There are several ways to create an account on PDS.
+There are several ways to create an account on PDS. All methods require the following environment variables:
+
+- `PDS_HOSTNAME` ... The value you entered in the template
+- `PDS_ADMIN_PASSWORD` ... Automatically generated value after deployment. You can check it from "Variables" of PDS on Railway.
 
 ### Command Line (pdsadmin)
 
-You can create an account by running the following commands. You need the [railway CLI](https://docs.railway.com/guides/cli).
+You can create an account by running the following commands on your local environment.
 
 ```
 $ git clone https://github.com/bluesky-social/pds  
 $ cd pds  
 $ vim ./pdsadmin/account.sh # Comment out lines 6 and 7 that reference pds.env
-$ railway link # Select the generated project
-> Select a workspace: your-workspace  
-> Select a project: your-project  
-> Select an environment: production  
-> Select a service: pds  
-$ railway run bash ./pdsadmin/account.sh create  
+$ export PDS_HOSTNAME=${PDS_HOSTNAME}
+$ export PDS_ADMIN_PASSWORD=${PDS_ADMIN_PASSWORD}
+$ bash ./pdsadmin/account.sh create  
 Enter an email address (e.g. alice@example.com): example@example.com  
 Enter a handle (e.g. alice.example.com): alice.example.com  
 
@@ -58,16 +58,14 @@ Save this password, it will not be displayed again.
 
 ### Command Line (curl)
 
-You can also send requests directly to the endpoints used by pdsadmin with curl instead of using pdsadmin.
+You can also send requests directly to the endpoints used by pdsadmin with curl.
 
-See https://atproto.wiki/en/wiki/pds#running-bluesky-pds-with-railway for details.
+See https://atproto.wiki/en/wiki/pds#running-bluesky-pds-with-railway to issue an invitation code and create an account at https://bsky.app.
 
 ### Web Tool
 
-You can use the following tool that I created:
+If you're not familiar with the command line, you can use the following tool that I created:
 
 https://mkizka.github.io/pdsadmin-web/ 
 
-Repository is [here](https://github.com/mkizka/pdsadmin-web). Log in with the `PDS_HOSTNAME` of your created PDS and the auto-generated `PDS_ADMIN_PASSWORD` to create a new account.
-
-You can also issue invitation codes using the web tool and create accounts at https://bsky.app.
+Repository is [here](https://github.com/mkizka/pdsadmin-web). Log in with `PDS_HOSTNAME` and `PDS_ADMIN_PASSWORD` to create a new account.
