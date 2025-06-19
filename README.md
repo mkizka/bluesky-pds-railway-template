@@ -30,19 +30,9 @@ If you have any questions, please contact [@mkizka.dev](https://bsky.app/profile
 
 There are several ways to create an account on PDS.
 
-### Web Tool
+### Command Line (pdsadmin)
 
-You can use the following tool that I created:
-
-https://mkizka.github.io/pdsadmin-web/ 
-
-Log in with the `PDS_HOSTNAME` of your created PDS and the auto-generated `PDS_ADMIN_PASSWORD` to create a new account.
-
-You can also issue invitation codes using the web tool and create accounts at https://bsky.app.
-
-### Command Line
-
-You can also create an account by running the following commands. You need the [railway CLI](https://docs.railway.com/guides/cli).
+You can create an account by running the following commands. You need the [railway CLI](https://docs.railway.com/guides/cli).
 
 ```
 $ git clone https://github.com/bluesky-social/pds  
@@ -65,3 +55,19 @@ Password : xxxxxxxxxx
 -----------------------------  
 Save this password, it will not be displayed again.
 ```
+
+### Command Line (curl)
+
+You can also send requests directly to the endpoints used by pdsadmin with curl instead of using pdsadmin.
+
+See https://atproto.wiki/en/wiki/pds#running-bluesky-pds-with-railway for details.
+
+### Web Tool
+
+You can use the following tool that I created:
+
+https://mkizka.github.io/pdsadmin-web/ 
+
+Repository is [here](https://github.com/mkizka/pdsadmin-web). Log in with the `PDS_HOSTNAME` of your created PDS and the auto-generated `PDS_ADMIN_PASSWORD` to create a new account.
+
+You can also issue invitation codes using the web tool and create accounts at https://bsky.app.

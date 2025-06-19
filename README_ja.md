@@ -30,19 +30,9 @@ https://github.com/bluesky-social/pds/blob/main/installer.sh
 
 PDSにアカウントを作成するにはいくつかの方法があります。
 
-### Webツール
+### コマンドライン(pdsadmin)
 
-私が作成した以下のツールが利用できます。
-
-https://mkizka.github.io/pdsadmin-web/ 
-
-作成したPDSの`PDS_HOSTNAME`と、自動生成された `PDS_ADMIN_PASSWORD`でログインして新しいアカウントを作成してください。
-
-Webツールで招待コードを発行し、https://bsky.app でアカウントを作成することも出来ます。
-
-### コマンドライン
-
-以下のコマンドを実行してアカウントを作成することも出来ます。[railway CLI](https://docs.railway.com/guides/cli)が必要です。
+以下のコマンドを実行してアカウントを作成することが出来ます。[railway CLI](https://docs.railway.com/guides/cli)が必要です。
 
 ```
 $ git clone https://github.com/bluesky-social/pds  
@@ -65,3 +55,19 @@ Password : xxxxxxxxxx
 -----------------------------  
 Save this password, it will not be displayed again.
 ```
+
+### コマンドライン(curl)
+
+pdsadminを使用せず、pdsadminで利用されているエンドポイントにcurlで直接リクエストを送ることも可能です。
+
+https://atproto.wiki/en/wiki/pds#running-bluesky-pds-with-railway を参照してください。
+
+### Webツール
+
+私が作成した以下のツールが利用できます。
+
+https://mkizka.github.io/pdsadmin-web/ 
+
+リポジトリは[こちら](https://github.com/mkizka/pdsadmin-web)。作成したPDSの`PDS_HOSTNAME`と、自動生成された `PDS_ADMIN_PASSWORD`でログインして新しいアカウントを作成してください。
+
+Webツールで招待コードを発行し、https://bsky.app でアカウントを作成することも出来ます。
