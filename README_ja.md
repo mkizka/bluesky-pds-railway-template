@@ -2,7 +2,7 @@
 
 [English version / 英語版](README.md)
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/xBNJ1u?referralCode=mveF9L)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/xBNJ1u?referralCode=mveF9L)
 
 このリポジトリは、[Bluesky PDS](https://railway.com/template/xBNJ1u?referralCode=mveF9L)テンプレートの使い方を説明するためのものです。
 
@@ -18,13 +18,12 @@ https://github.com/bluesky-social/pds/blob/main/installer.sh
 1. 「Deploy Now」をクリック
 1. Environment variables を入力して「Deploy」をクリック
 1. デプロイが完了したらPDSの「Settings」→「Public Networking」に移動し、使用したいドメインを登録します。ドメインは `PDS_HOSTNAME` 環境変数と一致させる必要があります。例：
-   | ドメイン        | ポート |
+   | ドメイン | ポート |
    | -------------- | ---- |
-   | example.com    | 3000 |
-   | *.example.com  | 3000 |
+   | example.com | 3000 |
+   | \*.example.com | 3000 |
 
 1. Cloudflareまたは他のDNSプロバイダーを使用して、ドメインのCNAMEレコードを設定します。詳しくは[Railwayのドキュメント](https://docs.railway.com/guides/public-networking#custom-domains)を参照してください。
-
 
 ## アカウントの作成方法
 
@@ -38,21 +37,21 @@ PDSにアカウントを作成するにはいくつかの方法があります�
 以下のコマンドをローカル環境で実行してアカウントを作成出来ます。
 
 ```
-$ git clone https://github.com/bluesky-social/pds  
-$ cd pds  
+$ git clone https://github.com/bluesky-social/pds
+$ cd pds
 $ vim ./pdsadmin/account.sh # pds.envを参照している6行目と7行目をコメントアウト
 $ export PDS_HOSTNAME=${PDS_HOSTNAME}
 $ export PDS_ADMIN_PASSWORD=${PDS_ADMIN_PASSWORD}
-$ bash ./pdsadmin/account.sh create  
-Enter an email address (e.g. alice@example.com): example@example.com  
-Enter a handle (e.g. alice.example.com): alice.example.com  
+$ bash ./pdsadmin/account.sh create
+Enter an email address (e.g. alice@example.com): example@example.com
+Enter a handle (e.g. alice.example.com): alice.example.com
 
-Account created successfully!  
------------------------------  
-Handle   : alice.example.com  
-DID      : did:plc:xxxxxxxxxx  
-Password : xxxxxxxxxx  
------------------------------  
+Account created successfully!
+-----------------------------
+Handle   : alice.example.com
+DID      : did:plc:xxxxxxxxxx
+Password : xxxxxxxxxx
+-----------------------------
 Save this password, it will not be displayed again.
 ```
 
@@ -66,6 +65,6 @@ https://atproto.wiki/en/wiki/pds#running-bluesky-pds-with-railway を参照し�
 
 コマンドラインに慣れていない場合は、私が作成した以下のツールが利用できます。
 
-https://mkizka.github.io/pdsadmin-web/ 
+https://mkizka.github.io/pdsadmin-web/
 
 リポジトリは[こちら](https://github.com/mkizka/pdsadmin-web)。`PDS_HOSTNAME`と`PDS_ADMIN_PASSWORD`でログインして新しいアカウントを作成してください。
