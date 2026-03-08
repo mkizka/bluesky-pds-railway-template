@@ -32,32 +32,28 @@ PDSにアカウントを作成するにはいくつかの方法があります�
 - `PDS_HOSTNAME` ... テンプレートに入力した値
 - `PDS_ADMIN_PASSWORD` ... デプロイ後に自動生成された値。Railway上でPDSの「Variables」から確認できます。
 
-### コマンドライン(pdsadmin)
+### コマンドライン(goat)
 
-以下のコマンドをローカル環境で実行してアカウントを作成出来ます。
+[goat](https://github.com/bluesky-social/goat)を使用してコマンドラインからアカウントを作成できます。goatはBluesky公式のAT Protocol用CLIツールです。
+
+まず[bluesky-social/pds](https://github.com/bluesky-social/pds?tab=readme-ov-file#goat-cli)の手順に従ってgoatコマンドをインストールします。
+
+その後、以下のコマンドでアカウントを作成できます。
 
 ```
-$ git clone https://github.com/bluesky-social/pds
-$ cd pds
-$ vim ./pdsadmin/account.sh # pds.envを参照している6行目と7行目をコメントアウト
-$ export PDS_HOSTNAME=${PDS_HOSTNAME}
-$ export PDS_ADMIN_PASSWORD=${PDS_ADMIN_PASSWORD}
-$ bash ./pdsadmin/account.sh create
-Enter an email address (e.g. alice@example.com): example@example.com
-Enter a handle (e.g. alice.example.com): alice.example.com
-
-Account created successfully!
------------------------------
-Handle   : alice.example.com
-DID      : did:plc:xxxxxxxxxx
-Password : xxxxxxxxxx
------------------------------
-Save this password, it will not be displayed again.
+$ goat pds admin account create \
+    --pds-host https://${PDS_HOSTNAME} \
+    --admin-password ${PDS_ADMIN_PASSWORD} \
+    --handle ハンドル.${PDS_HOSTNAME} \
+    --email あなたのメールアドレス \
+    --password あなたのパスワード
 ```
+
+ハンドルは`PDS_HOSTNAME`のサブドメインである必要があります。(例：alice.example.com)
 
 ### コマンドライン(curl)
 
-pdsadminで利用されているエンドポイントにcurlで直接リクエストを送ることも可能です。
+goatの代わりに、curlで直接APIリクエストを送ることも可能です。
 
 https://atproto.wiki/en/wiki/pds#running-bluesky-pds-with-railway を参照して招待コードを発行し、https://bsky.app でアカウントを作成出来ます。
 

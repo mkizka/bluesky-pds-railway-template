@@ -32,32 +32,28 @@ There are several ways to create an account on PDS. All methods require the foll
 - `PDS_HOSTNAME` ... The value you entered in the template
 - `PDS_ADMIN_PASSWORD` ... Automatically generated value after deployment. You can check it from "Variables" of PDS on Railway.
 
-### Command Line (pdsadmin)
+### Command Line (goat)
 
-You can create an account by running the following commands on your local environment.
+You can create an account from the command line using [goat](https://github.com/bluesky-social/goat). goat is the official Bluesky CLI tool for the AT Protocol.
+
+First, install the goat command by following the instructions at [bluesky-social/pds](https://github.com/bluesky-social/pds?tab=readme-ov-file#goat-cli).
+
+Then, create an account with the following command.
 
 ```
-$ git clone https://github.com/bluesky-social/pds
-$ cd pds
-$ vim ./pdsadmin/account.sh # Comment out lines 6 and 7 that reference pds.env
-$ export PDS_HOSTNAME=${PDS_HOSTNAME}
-$ export PDS_ADMIN_PASSWORD=${PDS_ADMIN_PASSWORD}
-$ bash ./pdsadmin/account.sh create
-Enter an email address (e.g. alice@example.com): example@example.com
-Enter a handle (e.g. alice.example.com): alice.example.com
-
-Account created successfully!
------------------------------
-Handle   : alice.example.com
-DID      : did:plc:xxxxxxxxxx
-Password : xxxxxxxxxx
------------------------------
-Save this password, it will not be displayed again.
+$ goat pds admin account create \
+    --pds-host https://${PDS_HOSTNAME} \
+    --admin-password ${PDS_ADMIN_PASSWORD} \
+    --handle handle.${PDS_HOSTNAME} \
+    --email your-email@example.com \
+    --password your-password
 ```
+
+The handle must be a subdomain of `PDS_HOSTNAME`. (e.g. alice.example.com)
 
 ### Command Line (curl)
 
-You can also send requests directly to the endpoints used by pdsadmin with curl.
+Instead of goat, you can also send API requests directly with curl.
 
 See https://atproto.wiki/en/wiki/pds#running-bluesky-pds-with-railway to issue an invitation code and create an account at https://bsky.app.
 
